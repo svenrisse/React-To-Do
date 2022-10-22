@@ -3,7 +3,24 @@ import Task from "./components/Task";
 import Add from "./components/Add";
 
 function App() {
+  const tasks = [
+    {
+      title: "Water the flowers",
+      description: "It's important to take care of nature"
+    },
+    {
+      title: "Water the flowers",
+      description: "It's important to take care of nature"
+    },
+    {
+      title: "Water the flowers",
+      description: "It's important to take care of nature"
+    }
+  ]
 
+  const toDos = tasks.map(todo => 
+      <Task title={todo.title} description={todo.description} />
+    )
 
   return (
     <div>
@@ -18,7 +35,7 @@ function App() {
       </div>
 
       <div className="tasks">
-        <Task title="Water the flowers" description="It's important to take care of nature"></Task>
+        {toDos}
       </div>
 
     </div>
