@@ -35,23 +35,38 @@ function Addsection(props) {
     }, [props.tasks]);
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                name="title"
-                placeholder="Title"
-                onChange={handleChange}
-                value={formData.title}
-                required
-            />
-            <input
-                type="text"
-                name="description"
-                placeholder="Description"
-                onChange={handleChange}
-                value={formData.description}
-            />
-            <button>Add</button>
+        <form onSubmit={handleSubmit} className="topbar__form">
+            <div className="form__group field">
+                <input
+                    id="title"
+                    className="form__field"
+                    type="text"
+                    name="title"
+                    placeholder="Title"
+                    onChange={handleChange}
+                    value={formData.title}
+                    required
+                />
+                <label htmlFor="title" className="form__label">
+                    Title
+                </label>
+            </div>
+            <div className="form__group field">
+                <input
+                    id="description"
+                    className="form__field"
+                    type="text"
+                    name="description"
+                    placeholder="Description"
+                    onChange={handleChange}
+                    value={formData.description}
+                />
+                <label htmlFor="description" className="form__label">
+                    Description
+                </label>
+            </div>
+
+            <button className="form__button">Add</button>
         </form>
     );
 }

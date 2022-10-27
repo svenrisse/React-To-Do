@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./index.scss";
 import Addsection from "./components/Addsection";
 import Todo from "./components/Todo";
 
