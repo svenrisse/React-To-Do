@@ -1,49 +1,60 @@
 import { useEffect, useState } from "react";
 
-function Addsection() {
-    const [formData, setFormData] = useState(
-        {
-            title: "",
-            description: "",
-            date: ""
-        }
-    )
-    const [tasks, setTasks] = useState([]);
+function Addsection(props) {
+    const [formData, setFormData] = useState({
+        title: "",
+        description: "",
+    });
 
     function handleChange(event) {
-        setFormData(prevFormData => {
+        setFormData((prevFormData) => {
             return {
                 ...prevFormData,
-                [event.target.name]: event.target.value
-            }
-        })
+                [event.target.name]: event.target.value,
+            };
+        });
     }
 
     function handleSubmit(event) {
-        event.preventDefault()
-        setTasks([
-            ...tasks,
-            {title: formData.title, description: formData.description, date: formData.description}
-        ])
+        event.preventDefault();
+        props.setTasks([
+            ...props.tasks,
+            {
+                title: formData.title,
+                description: formData.description,
+            },
+        ]);
     }
 
     useEffect(() => {
         setFormData({
             title: "",
             description: "",
-            date: ""
+            date: "",
         });
-    }, [tasks])
+    }, [props.tasks]);
 
-    console.log(tasks)
+    console.log(props.tasks);
+
     return (
         <form onSubmit={handleSubmit}>
-            <input type="text" name="title" placeholder="Title" onChange={handleChange} value={formData.title} />
-            <input type="text" name="description" placeholder="Description" onChange={handleChange} value={formData.description} />
-            <input type="date" name="date" onChange={handleChange} value={formData.date} />
+            <input
+                type="text"
+                name="title"
+                placeholder="Title"
+                onChange={handleChange}
+                value={formData.title}
+            />
+            <input
+                type="text"
+                name="description"
+                placeholder="Description"
+                onChange={handleChange}
+                value={formData.description}
+            />
             <button>Add</button>
         </form>
-    )
+    );
 }
 
 export default Addsection;
