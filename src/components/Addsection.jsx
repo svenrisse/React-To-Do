@@ -66,7 +66,7 @@ function Addsection(props) {
                 </label>
             </div>
 
-            <button className="form__button">Add</button>
+            <button className="form__button">+</button>
         </form>
     );
 }

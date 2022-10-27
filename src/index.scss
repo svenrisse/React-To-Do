@@ -109,6 +109,16 @@ $gray: #9b9b9b;
     justify-content: center;
 }
 
+.todo__info-done {
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: line-through;
+  text-decoration-thickness: 12%;
+  text-decoration-color: $secondary;
+}
+
 .todo__title {
     font-size: 20px;
     text-transform: uppercase;
