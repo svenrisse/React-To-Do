@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Addsection() {
     const [formData, setFormData] = useState(
@@ -27,6 +27,15 @@ function Addsection() {
         ])
     }
 
+    useEffect(() => {
+        setFormData({
+            title: "",
+            description: "",
+            date: ""
+        });
+    }, [tasks])
+
+    console.log(tasks)
     return (
         <form onSubmit={handleSubmit}>
             <input type="text" name="title" placeholder="Title" onChange={handleChange} value={formData.title} />
