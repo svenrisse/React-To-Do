@@ -95,3 +95,37 @@ $gray: #9b9b9b;
 }
 
 // todos
+
+.todo {
+    margin-top: 5%;
+    display: grid;
+    grid-template: 1fr / 70% 1fr;
+}
+
+.todo__info {
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.todo__title {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.todo__description {
+    font-size: 13px;
+    margin-left: 2%;
+    text-transform: uppercase;
+    color: $gray;
+}
+
+.todo__button {
+    justify-self: flex-end;
+    margin-right: 5%;
+    width: 37.5%;
+    border-radius: 100%;
+    background: linear-gradient(to right, $primary,$secondary);
+    border: 0;
+}
