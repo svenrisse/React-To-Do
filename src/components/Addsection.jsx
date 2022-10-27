@@ -42,6 +42,7 @@ function Addsection(props) {
                 placeholder="Title"
                 onChange={handleChange}
                 value={formData.title}
+                required
             />
             <input
                 type="text"
