@@ -12,21 +12,27 @@ function App() {
         }
     });
 
-    const toDos = tasks.map(task => {
-        return <Todo 
-                    key={tasks.indexOf(task)}
-                    title={task.title}
-                    description={task.description}
-                    handleClick={deleteTodo}
-                />
-    })
+    const toDos = tasks.map((task) => {
+        return (
+            <Todo
+                id={tasks.indexOf(task)}
+                key={tasks.indexOf(task)}
+                title={task.title}
+                description={task.description}
+                handleClick={deleteTodo}
+            />
+        );
+    });
 
     useEffect(() => {
         localStorage.setItem("todos", JSON.stringify(tasks));
-    }, [tasks])
+    }, [tasks]);
 
-    function deleteTodo(title) {
-        console.log(title)
+    function deleteTodo(e) {
+        const id = e.target.getAttribute("id");
+        const temp = [...tasks];
+        temp.splice(id, 1);
+        setTasks(temp);
     }
 
     return (
@@ -34,9 +40,7 @@ function App() {
             <div className="topbar">
                 <Addsection tasks={tasks} setTasks={setTasks} />
             </div>
-            <div className="tasks-container">
-                {toDos}
-            </div>
+            <div className="tasks-container">{toDos}</div>
         </div>
     );
 }
