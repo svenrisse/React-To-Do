@@ -34,8 +34,6 @@ function Addsection(props) {
         });
     }, [props.tasks]);
 
-    console.log(props.tasks);
-
     return (
         <form onSubmit={handleSubmit}>
             <input
