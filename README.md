@@ -5,4 +5,4 @@ Tools:
 - SASS
 - Vite
 
-Check it out here: https://delicate-crostata-499c39.netlify.app/
+Check it out on [Vercel] (https://react-to-do-indol.vercel.app/)
