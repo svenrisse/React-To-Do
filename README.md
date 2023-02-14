@@ -5,4 +5,4 @@ Tools:
 - SASS
 - Vite
 
-Check it out on [Vercel] (https://react-to-do-indol.vercel.app/)
+Check it out on [Vercel](https://react-to-do-indol.vercel.app/)
